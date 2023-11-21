@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 조민희 - effectBox </title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            margin: 0;
+            background-color: #ddd;
+        }
+        a {
+            text-decoration: none;
+        }
+        p {
+            font-size: 13px;
+        }
+        figure.box {
+            position: relative; 
+            top: 150px;
+            margin: 0 auto;
+            width: 480px;
+            height: 292px;
+            cursor: pointer; 
+            /* 마우스 올렸을때 손가락 나오게 함 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
+            /* x, y, 흐림효과, 색, 투명 */
+        }
+
+        /* img */
+        figure.box img {
+            width: 100%;
+            opacity: 0.7; 
+            /* 70% 투명도 */
+        } 
+
+        figure.box:hover img {
+            opacity: 1;
+            /* 100% 투명도 */
+        } 
+
+        /* text */
+
+        figure.box figcaption {
+            position: absolute;
+            top: 70px;
+            left: 30px;
+            color: #fff;
+        }
+
+        figure.box figcaption hl {
+            font-weight: 300; 
+            /* 세체 굵기 - 수치가 작을수록 얇다 */
+            transition:.2s;
+           font-size: 32px;
+        }
+
+        figure.box figcaption hl span {
+            font-weight: 800;
+        }
+
+        figure.box figcaption p {
+            font-size: 13px;
+            opacity: 0;
+            transition:.2s;
+        }
+
+        figure.box:hover p {
+            opacity: 1;
+        }
+
+        figure.box hl,
+        figure.box p {
+            transform: translate(0,40px);
+        }
+
+        figure.box p a {color: #fff;}
+        /* x, y */
+
+        /* hover */
+
+        figure.box:hover img,
+        figure.box:hover hl,
+        figure.box:hover p {
+            transform: translate(0,0);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- figure.box>img+figcaption>div>hl>span -->
+    <figure class="box">
+        <!-- ba img -->
+        <img src="./images/1.jpg" alt="모바일 이미지">
+
+        <!-- text -->
+        <figcaption>
+            <div>
+                <hl> EZEN <span> EAENT </span></hl>
+                <p><a href="https://swig.ezenac.co.kr/">
+                    이젠을 친구 추가하면 <br>
+                        온라인 쿠폰이 쏘옥~!
+                </a></p>
+            </div>
+        </figcaption>
+    </figure>
+</body>
+
+</html>
